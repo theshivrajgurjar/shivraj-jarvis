@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #07090d;
+  --foreground: #f4f7fb;
+  --panel: rgba(15, 20, 27, 0.78);
+  --panel-strong: rgba(18, 24, 32, 0.94);
+  --line: rgba(148, 163, 184, 0.16);
+  --muted: #8290a3;
+  --cyan: #67e8f9;
+  --amber: #fbbf24;
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; background: var(--background); }
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--foreground);
+  background:
+    radial-gradient(circle at 50% -10%, rgba(34, 211, 238, 0.1), transparent 35rem),
+    radial-gradient(circle at 85% 65%, rgba(251, 191, 36, 0.055), transparent 28rem),
+    var(--background);
+  font-feature-settings: "ss01" 1, "cv11" 1;
+}
+
+::selection { color: #071016; background: var(--cyan); }
+button, input, textarea, select { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body { overflow-x: hidden; }
+}
